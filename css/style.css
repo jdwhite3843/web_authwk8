@@ -1,0 +1,264 @@
+/* CSS variables */
+
+:root{
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    
+}
+
+html{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+
+body{
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+.btn{
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+.btn:hover{
+    background: var(--light);
+    color: var(--dark);
+}
+
+ img{
+     max-width: fit-content;
+ }
+
+ body {
+     background-color: black;
+     color: rgb(255, 0, 0);
+ }
+
+ .wrapper{
+     display: grid;
+     grid-gap: 10px;
+ }
+
+ /* navigation */
+
+ .main-nav ul{
+     display: grid;
+     grid-gap: 25px;
+     padding: 0;
+     list-style: none;
+     grid-template-columns: repeat(5, 1fr);
+     margin-top: 5px;
+     border: double 5px red;
+ }
+
+ .main-nav a{
+     background: var(--primary);
+     display: inline;
+     text-decoration: none;
+     padding: 0.8rem;
+     text-align: center;
+     color: var(--dark);
+     text-transform: uppercase;
+     font-size: 1.1rem;
+     box-shadow: var(--shadow);
+     justify-content: flex-start;
+     border: double 5px red;
+ }
+
+ .main-nav a:hover {
+     background: var(--dark);
+     color: var(--light);
+ }
+
+/* TOP container */
+
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+    max-width: 150rem;
+    max-height: 100rem;
+}
+
+/* showcase */
+
+.showcase1 {
+    grid-area:  showcase;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../images/webmaster_ninja.jpg");
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: 2px 2px rgb(202, 2, 2);
+    text-align: initial;
+}
+
+.showcase2 {
+    grid-area:  showcase;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../images/ninja2.jpg");
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: 2px 2px rgb(214, 5, 5);
+    text-align: initial;
+}
+
+.showcase3 {
+    grid-area:  showcase;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: 2px 2px rgb(197, 6, 6);
+    text-align: initial;
+}
+
+.showcase1 h1 {
+    font-size: 5rem;
+    margin-block: 0;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px rgb(255, 1, 1);
+}
+.showcase2 h1 {
+    font-size: 5rem;
+    margin-block: 0;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px rgb(255, 1, 1);
+}
+.showcase3 h1 {
+    font-size: 5rem;
+    margin-block: 0;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px rgb(255, 1, 1);
+}
+.showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--light);
+
+}
+
+/* top box*/
+.top-box {
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: stretch;
+    box-shadow: var(--shadow);
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+    justify-content: space-evenly;
+    width: min-content;
+    background-color: black;
+    border: dotted 4px red;
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+    justify-content: space-evenly;
+    background-color: black;
+    border: dotted 4px red;
+}
+
+/* boxes */
+
+.boxes {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+    background-color: black;
+    
+}
+
+
+.box {
+    flex-grow: 3;
+    background: var(--primary);
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin: 5px;
+    background-color: black;
+    border: dotted 4px red;
+}
+
+/* info */
+
+.info {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+/* footer */
+footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    padding: 1rem;
+}
+
+/* media queries*/
+
+@media(max-width: 700px) {
+    .top-container{
+        grid-template-areas: 
+        'showcase showcase top-box-a'
+        'showcase showcase top-box-b';
+    }
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+    .main-nav ul {
+        grid-template-columns: 1fr;
+    }
+    .info {
+        grid-template-columns: 1fr;
+    }
+    .info btn {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+    img{
+        size: 300px;
+    }
+}
+@media(max-width: 500px){
+    .top-container{
+        grid-template-areas:
+        'showcase'
+        'top-box-a'
+        'top-box-b'
+    }
+    img{
+        size: 300px;
+    }
+}
